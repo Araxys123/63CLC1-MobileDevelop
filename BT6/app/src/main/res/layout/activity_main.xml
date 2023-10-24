@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:layout_marginTop="95dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/num1"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter a number"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/num2"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter a number"
+            android:inputType="number" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="15dp"
+            android:text="+"></Button>
+
+        <Button
+            android:id="@+id/minusButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="-"></Button>
+
+        <Button
+            android:id="@+id/multiButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="x"></Button>
+
+        <Button
+            android:id="@+id/divButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="/"></Button>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        ></TextView>
+
+</LinearLayout>

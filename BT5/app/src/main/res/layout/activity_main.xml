@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginTop="200px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50px"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:text="BMI CALCULATOR" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your height in Cm"/>
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter your height here"
+            android:inputType="number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your weight in kg"/>
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your weight here"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_marginTop="20px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALCULATE"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/result"
+            android:textSize="52px"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
