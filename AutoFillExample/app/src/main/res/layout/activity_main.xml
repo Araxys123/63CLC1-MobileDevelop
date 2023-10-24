@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:paddingLeft="20px"
+        android:paddingTop="20px"
+        android:textSize="30dp"
+        android:text="Enter country name: " />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoFillBar"
+        android:layout_height="40dp"
+        android:layout_width="350dp"
+
+        android:completionThreshold="1"
+        />
+
+</LinearLayout>
