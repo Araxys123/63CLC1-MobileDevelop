@@ -16,12 +16,12 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        Intent intentBacktoMainActivity = new Intent();
+        Intent intentBackToMainActivity = new Intent();
 //---get the EditText view---
         EditText txt_username = (EditText) findViewById(R.id.edtUsername);
 //---put/set the data to pass back, in key,value pair format---
-        intentBacktoMainActivity.putExtra("UNAME", txt_username.getText().toString());
-        setResult(RESULT_OK, intentBacktoMainActivity);
+        intentBackToMainActivity.putExtra("UNAME", txt_username.getText().toString());
+        setResult(RESULT_OK, intentBackToMainActivity);
         finish();
     }
 }
