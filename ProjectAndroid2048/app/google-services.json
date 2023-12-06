@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "932387306189",
+    "project_id": "projectandroid2048",
+    "storage_bucket": "projectandroid2048.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932387306189:android:6e729d9d14819f1ac04784",
+        "android_client_info": {
+          "package_name": "vn.vominh.projectandroid2048"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9ex-hRY0_fK1h0gx_Db9wvY8Y-KN7NWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
