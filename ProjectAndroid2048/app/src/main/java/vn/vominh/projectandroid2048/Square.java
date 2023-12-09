@@ -1,7 +1,6 @@
 package vn.vominh.projectandroid2048;
 
-public class Square { //ячейка
-
+public class Square {
     private int column;
     private int row;
     private int value;
