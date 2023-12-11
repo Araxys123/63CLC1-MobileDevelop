@@ -30,45 +30,55 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        // Khởi tạo các phần tử giao diện người dùng
         etRegEmail = findViewById(R.id.etRegEmail);
         etRegPassword = findViewById(R.id.etRegPass);
         tvLoginHere = findViewById(R.id.tvLoginHere);
         btnRegister = findViewById(R.id.btnRegister);
 
+        // Khởi tạo Firebase Authentication
         mAuth = FirebaseAuth.getInstance();
 
-        btnRegister.setOnClickListener(view ->{
+        // Thiết lập lắng nghe sự kiện khi nút Sign Up được nhấn
+        btnRegister.setOnClickListener(view -> {
             createUser();
         });
 
-        tvLoginHere.setOnClickListener(view ->{
+        // Thiết lập lắng nghe sự kiện khi nút Sign in here được nhấn
+        tvLoginHere.setOnClickListener(view -> {
             startActivity(new Intent(SignUp.this, SignIn.class));
         });
     }
 
-    private void createUser(){
+    // Phương thức để tạo một tài khoản người dùng mới
+    private void createUser() {
+        // Lấy email và mật khẩu do người dùng nhập
         String email = etRegEmail.getText().toString();
         String password = etRegPassword.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
+        // Kiểm tra xem email có trống không
+        if (TextUtils.isEmpty(email)) {
             etRegEmail.setError("Email cannot be empty");
             etRegEmail.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
+        }
+        // Kiểm tra xem mật khẩu có trống không
+        else if (TextUtils.isEmpty(password)) {
             etRegPassword.setError("Password cannot be empty");
             etRegPassword.requestFocus();
-        }else{
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        }
+        else {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         Toast.makeText(SignUp.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignUp.this, SignIn.class));
-                    }else{
-                        Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(SignUp.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
     }
-
 }
+

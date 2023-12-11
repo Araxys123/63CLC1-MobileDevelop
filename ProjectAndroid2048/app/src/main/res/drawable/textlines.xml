@@ -3,7 +3,7 @@
 
     <item>
         <shape android:shape="rectangle" >
-            <solid android:color="#f00000a0" />
+            <solid android:color="#40e0d0" />
             <padding
                 android:bottom="2dp"
                 android:left="2dp"
@@ -21,7 +21,7 @@
                 android:right="1dp"
                 android:top="1dp" />
 
-            <solid android:color="#ffffffff" />
+            <solid android:color="#a9a9a9" />
         </shape>
     </item>
 </layer-list>
