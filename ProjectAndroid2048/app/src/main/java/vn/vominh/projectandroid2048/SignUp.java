@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -31,8 +32,11 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         // Khởi tạo các phần tử giao diện người dùng
-        etRegEmail = findViewById(R.id.etRegEmail);
-        etRegPassword = findViewById(R.id.etRegPass);
+        TextInputLayout etRegEmailLayout = findViewById(R.id.etRegEmail);
+        etRegEmail = (TextInputEditText) etRegEmailLayout.getEditText();
+
+        TextInputLayout etRegPasswordLayout = findViewById(R.id.etRegPassword);
+        etRegPassword = (TextInputEditText) etRegPasswordLayout.getEditText();
         tvLoginHere = findViewById(R.id.tvLoginHere);
         btnRegister = findViewById(R.id.btnRegister);
 

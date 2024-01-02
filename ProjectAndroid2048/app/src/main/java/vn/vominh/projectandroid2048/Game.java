@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class Game extends Activity {
 
@@ -40,21 +42,25 @@ public class Game extends Activity {
             public void onSwipeTop() {
                 board.topSwipe();
                 showBoard();
+                checkGameStatus();
             }
 
             public void onSwipeRight() {
                 board.rightSwipe();
                 showBoard();
+                checkGameStatus();
             }
 
             public void onSwipeLeft() {
                 board.leftSwipe();
                 showBoard();
+                checkGameStatus();
             }
 
             public void onSwipeBottom() {
                 board.bottomSwipe();
                 showBoard();
+                checkGameStatus();
             }
         });
     }
@@ -76,5 +82,66 @@ public class Game extends Activity {
     public void Finish(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    // Phương thức để kiểm tra xem game đã kết thúc chưa
+    private void checkGameStatus() {
+        // Kiểm tra điều kiện thua
+        boolean isGameOver = isGameOver();
+
+        // Kiểm tra điều kiện thắng
+        boolean isGameWon = isGameWon();
+
+        // Hiển thị thông báo tương ứng
+        if (isGameOver || isGameWon) {
+            showGameOverDialog(isGameWon);
+        }
+    }
+
+    // Phương thức để hiển thị thông báo khi game kết thúc
+    private void showGameOverDialog(boolean isGameWon) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(isGameWon ? "Congratulations!" : "Game Over!");
+        builder.setMessage(isGameWon ? ("You won! Your score is " + board.getScore())
+                            : "Try harder next time. Your score is "+ board.getScore());
+        builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    // Phương thức để kiểm tra điều kiện thua
+    private boolean isGameOver() {
+        if(isGameWon()){
+            return false;
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (Integer.parseInt(tvBoard[i][j].getText().toString()) == 0 ||
+                        (i > 0 && Integer.parseInt(tvBoard[i][j].getText().toString()) == Integer.parseInt(tvBoard[i - 1][j].getText().toString())) ||
+                        (i < 4 - 1 && Integer.parseInt(tvBoard[i][j].getText().toString()) == Integer.parseInt(tvBoard[i + 1][j].getText().toString())) ||
+                        (j > 0 && Integer.parseInt(tvBoard[i][j].getText().toString()) == Integer.parseInt(tvBoard[i][j - 1].getText().toString())) ||
+                        (j < 4 - 1 && Integer.parseInt(tvBoard[i][j].getText().toString()) == Integer.parseInt(tvBoard[i][j + 1].getText().toString()))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // Phương thức để kiểm tra điều kiện thắng
+    private boolean isGameWon() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (Integer.parseInt(tvBoard[i][j].getText().toString()) == 2048) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

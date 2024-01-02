@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -31,10 +32,14 @@ public class SignIn extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         // Khởi tạo các phần tử giao diện người dùng
-        etLoginEmail = findViewById(R.id.etLoginEmail);
-        etLoginPassword = findViewById(R.id.etLoginPass);
+        TextInputLayout etLoginEmailLayout = findViewById(R.id.etLoginEmail);
+        etLoginEmail = (TextInputEditText) etLoginEmailLayout.getEditText();
+
+        TextInputLayout etLoginPasswordLayout = findViewById(R.id.etLoginPassword);
+        etLoginPassword = (TextInputEditText) etLoginPasswordLayout.getEditText();
+
         tvRegisterHere = findViewById(R.id.tvRegisterHere);
-        btnLogin = findViewById(R.id.btnLogin);
+            btnLogin = findViewById(R.id.btnLogin);
 
         // Khởi tạo Firebase Authentication
         mAuth = FirebaseAuth.getInstance();

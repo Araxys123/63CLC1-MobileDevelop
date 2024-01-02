@@ -15,7 +15,7 @@
         <item name="android:layout_marginTop">3dp</item>
         <item name="android:layout_marginLeft">3dp</item>
         <item name="android:layout_marginRight">3dp</item>
-        <item name="android:background">@drawable/textlines</item>
+        <item name="android:background">@drawable/tv_bg</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>

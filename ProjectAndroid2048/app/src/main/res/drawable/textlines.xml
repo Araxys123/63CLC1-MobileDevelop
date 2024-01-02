@@ -21,7 +21,7 @@
                 android:right="1dp"
                 android:top="1dp" />
 
-            <solid android:color="#a9a9a9" />
+            <solid android:color="#fff0f5" />
         </shape>
     </item>
 </layer-list>
