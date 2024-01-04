@@ -37,6 +37,7 @@ public class SignUp extends AppCompatActivity {
 
         TextInputLayout etRegPasswordLayout = findViewById(R.id.etRegPassword);
         etRegPassword = (TextInputEditText) etRegPasswordLayout.getEditText();
+
         tvLoginHere = findViewById(R.id.tvLoginHere);
         btnRegister = findViewById(R.id.btnRegister);
 
